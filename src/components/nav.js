@@ -8,7 +8,7 @@ const Nav = () => {
   return (
     <nav className={classNames(Classes.NAVBAR, Classes.DARK)}>
       <div className={classNames(Classes.NAVBAR_GROUP, Classes.ALIGN_LEFT)}>
-        <div className={classNames(Classes.NAVBAR_HEADING)}>oecd-boilerplate</div>
+        <div className={classNames(Classes.NAVBAR_HEADING)}>react-inception</div>
       </div>
       <div className={classNames(Classes.NAVBAR_GROUP, Classes.ALIGN_RIGHT)}>
         <Lang />

@@ -2,15 +2,12 @@
 
 ## aspects
 
-- i18n
-- auth
-- routing
-- sdmx
-- styles
-
-## application
-
-- [recompose](https://github.com/acdlite/recompose) ??
+- redux (thunk, reselect)
+- router v4 with code spliting
+- sync between history and store
+- i18n (react-intl)
+- blueprintjs, normalize.css and classnames
+- glamorous
 
 ## reusable components (UI/UX)
 
@@ -43,3 +40,47 @@ samples:
 - pure UI component
 - themed components
 - UX component
+
+## conventions
+
+#### className
+
+Rely on classnames module (https://github.com/JedWatson/classnames) to handle complex usecases.
+
+BAD:
+```javascript
+//import classNames from 'classnames';
+//import { Classes } from '@blueprintjs/core';
+
+<Button
+  text="text"
+  className={true ? 'active minimal' : 'minimal'}
+/>
+```
+
+GOOD:
+```javascript
+//import classNames from 'classnames';
+//import { Classes } from '@blueprintjs/core';
+
+<Button
+  text="text"
+  className={classNames(Classes.MINIMAL, { [Classes.ACTIVE]: true })}
+/>
+```
+
+#### blueprintjs classes usage
+
+Rely on blueprintjs Classes for a better maintainability.
+
+BAD:
+```javascript
+<p className="pt-ui-text-large">text</p>;
+```
+
+GOOD:
+```javascript
+//import { Classes } from '@blueprintjs/core';
+
+<p className={Classes.UI_TEXT_LARGE}>text</p>;
+```
