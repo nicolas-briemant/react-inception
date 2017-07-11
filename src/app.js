@@ -23,10 +23,10 @@ const routes = createRoutes(store);
 render(
   <Provider store={store}>
     <I18nProvider messages={messages}>
-      <Router history={history} routes={routes}>
+      <Router history={syncedHistory} routes={routes}>
         <Layout>
           <Switch>
-            { routes.map((route, index) => <Route key={index} { ...route } /> )}
+            {routes.map((route, index) => <Route key={index} { ...route } />)}
           </Switch>
         </Layout>
       </Router>
