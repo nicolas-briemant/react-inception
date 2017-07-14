@@ -17,16 +17,16 @@ log(meta);
 
 const initialState = {};
 const store = configureStore(initialState, history);
-const syncedHistory = syncHistoryWithStore(history, store);
+syncHistoryWithStore(history, store);
 const routes = createRoutes(store);
 
 render(
   <Provider store={store}>
     <I18nProvider messages={messages}>
-      <Router history={syncedHistory} routes={routes}>
+      <Router history={history} routes={routes}>
         <Layout>
           <Switch>
-            {routes.map((route, index) => <Route key={index} { ...route } />)}
+            {routes.map((route, key) => <Route key={key} { ...route } />)}
           </Switch>
         </Layout>
       </Router>
