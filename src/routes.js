@@ -3,10 +3,17 @@ import { asyncComponent } from './lib/async-component';
 export const createRoutes = (store) => {
   return [
     {
-      path: '/',
-      name: 'sandBox',
+      path: '/sandbox',
+      name: 'sandbox',
       component: asyncComponent(
-        () => import('./components/sand-box').then((module) => module.default)
+        () => import('./components/sandbox').then((module) => module.default)
+      ),
+    },
+    {
+      path: '/pulsar',
+      name: 'pulsar',
+      component: asyncComponent(
+        () => import('./components/pulsar').then((module) => module.default)
       ),
     },
     {
